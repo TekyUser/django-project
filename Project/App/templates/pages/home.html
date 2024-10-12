@@ -1,8 +1,10 @@
 {% extends "pages/base.html" %}
 {% load static %}
-{% block title %}Home{% endblock %}
+{% block title %}
+Travel Website - Toan's Website
+{% endblock %}
 {% block content %}
-    <!-- header -->
+<!-- header -->
 <header class = "flex">
     <div class = "container">
         <div class = "header-title">
@@ -31,8 +33,9 @@
         </div>
 
         <div class = "featured-row">
-            <div class = "featured-item my-2 shadow">
-                <img src = "images/featured-reo-de-janeiro-brazil.jpg" alt = "featured place">
+            {% comment %} NOT AUTOMATYCALLY {% endcomment %}
+            {% comment %} <div class = "featured-item my-2 shadow">
+                <img src = {%static "images/featured-reo-de-janeiro-brazil.jpg"%} alt = "featured place">
                 <div class = "featured-item-content">
                     <span>
                         <i class = "fas fa-map-marker-alt"></i>
@@ -45,7 +48,7 @@
             </div>
 
             <div class = "featured-item my-2 shadow">
-                <img src = "images/featured-north-bondi-australia.jpg" alt = "featured place">
+                <img src = {%static "images/featured-north-bondi-australia.jpg"%} alt = "featured place">
                 <div class = "featured-item-content">
                     <span>
                         <i class = "fas fa-map-marker-alt"></i>
@@ -58,7 +61,7 @@
             </div>
 
             <div class = "featured-item my-2 shadow">
-                <img src = "images/featured-berlin-germany.jpg" alt = "featured place">
+                <img src = {%static "images/featured-berlin-germany.jpg"%} alt = "featured place">
                 <div class = "featured-item-content">
                     <span>
                         <i class = "fas fa-map-marker-alt"></i>
@@ -71,7 +74,7 @@
             </div>
 
             <div class = "featured-item my-2 shadow">
-                <img src = "images/featured-khwaeng-wat-arun-thailand.jpg" alt = "featured place">
+                <img src = {%static "images/featured-khwaeng-wat-arun-thailand.jpg"%} alt = "featured place">
                 <div class = "featured-item-content">
                     <span>
                         <i class = "fas fa-map-marker-alt"></i>
@@ -84,7 +87,7 @@
             </div>
 
             <div class = "featured-item my-2 shadow">
-                <img src = "images/featured-rome-italy.jpg" alt = "featured place">
+                <img src = {%static "images/featured-rome-italy.jpg"%} alt = "featured place">
                 <div class = "featured-item-content">
                     <span>
                         <i class = "fas fa-map-marker-alt"></i>
@@ -97,7 +100,7 @@
             </div>
 
             <div class = "featured-item my-2 shadow">
-                <img src = "images/featured-fuvahmulah-maldives.jpg" alt = "featured place">
+                <img src = {%static "images/featured-fuvahmulah-maldives.jpg"%} alt = "featured place">
                 <div class = "featured-item-content">
                     <span>
                         <i class = "fas fa-map-marker-alt"></i>
@@ -107,7 +110,24 @@
                         <p class = "text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed dignissimos libero soluta illum, harum amet excepturi sit?</p>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
+
+
+            {% comment %} AUTOMATYCALLY {% endcomment %}
+            {% for place in featured_places %}
+                <div class="featured-item my-2 shadow">
+                    <img src="{% static place.image %}" alt="featured place">
+                    <div class="featured-item-content">
+                        <span>
+                            <i class="fas fa-map-marker-alt"></i> {{ place.name }}
+                        </span>
+                        <div>
+                            <p class="text">{{ place.des }}Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta sed dignissimos libero soluta illum similique.</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% comment %}  {% endcomment %}
         </div>
     </div>
 </section>
@@ -165,7 +185,7 @@
             <div class = "test-item">
                 <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda blanditiis, asperiores, velit iste eos officiis tempora magni quaerat quo consectetur expedita cum recusandae facere nam voluptate minus iusto eum. Delectus!</p>
                 <div class = "test-item-info">
-                    <img src = "images/test-1.jpg" alt = "testimonial">
+                    <img src = "{%static 'images/test-1.jpg'%}" alt = "testimonial">
                     <div>
                         <h3>Kevin Wilson</h3>
                         <p class = "text">Trip to Brazil</p>
@@ -176,7 +196,7 @@
             <div class = "test-item">
                 <p class = "text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed ut dolores tenetur harum deserunt. Maxime tenetur consectetur recusandae nobis fugit iusto natus quibusdam nulla!</p>
                 <div class = "test-item-info">
-                    <img src = "images/test-2.jpg" alt = "testimonial">
+                    <img src = "{%static "images/test-2.jpg"%}" alt = "testimonial">
                     <div>
                         <h3>Ben Davis</h3>
                         <p class = "text">Trip to Maldives</p>
@@ -187,7 +207,7 @@
             <div class = "test-item">
                 <p class = "text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem sapiente amet expedita quae autem deleniti quo magni numquam facilis soluta dicta, praesentium ipsum, quos optio sed quibusdam! Reprehenderit recusandae provident id nemo!</p>
                 <div class = "test-item-info">
-                    <img src = "images/test-3.jpg" alt = "testimonial">
+                    <img src = "{%static "images/test-3.jpg"%}" alt = "testimonial">
                     <div>
                         <h3>Jaura Jones</h3>
                         <p class = "text">Trip to Thailand</p>
@@ -203,7 +223,7 @@
 <section id = "video">
     <div class = "video-wrapper flex">
         <video loop>
-            <source src = "videos/video-section.mp4" type = "video/mp4">
+            <source src = "{%static "videos/video-section.mp4"%}" type = "video/mp4">
         </video>
         <button type = "button" id = "play-btn">
             <i class = "fas fa-play"></i>
@@ -211,81 +231,4 @@
     </div>
 </section>
 <!-- end of video section -->
-
-<!-- footer -->
-<footer class = "py-4">
-    <div class = "container footer-row">
-        <div class = "footer-item">
-            <a href = "index.html" class = "site-brand">
-                Trip<span>Boss</span>
-            </a>
-            <p class = "text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptates maiores nam vitae iusto. Placeat rem sint voluptas natus exercitationem autem quod neque, odit laudantium reiciendis ipsa suscipit veritatis voluptate.</p>
-        </div>
-
-        <div class = "footer-item">
-            <h2>Follow us on: </h2>
-            <ul class = "social-links">
-                <li>
-                    <a href = "#">
-                        <i class = "fab fa-facebook-f"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "#">
-                        <i class = "fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "#">
-                        <i class = "fab fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "#">
-                        <i class = "fab fa-pinterest"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href = "#">
-                        <i class = "fab fa-google-plus"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class = "footer-item">
-            <h2>Popular Places:</h2>
-            <ul>
-                <li><a href = "#">Thailand</a></li>
-                <li><a href = "#">Australia</a></li>
-                <li><a href = "#">Maldives</a></li>
-                <li><a href = "#">Switzerland</a></li>
-                <li><a href = "#">Germany</a></li>
-            </ul>
-        </div>
-
-        <div class = "subscribe-form footer-item">
-            <h2>Subscribe for Newsletter!</h2>
-            <form class = "flex">
-                <input type = "email" placeholder="Enter Email" class = "form-control">
-                <input type = "submit" class = "btn" value = "Subscribe">
-            </form>
-        </div>
-    </div>
-</footer>
-<!-- end of footer -->
-
-<!-- js -->
-<script src = "JS/main.js"></script>
-<script>
-    // play/pause video
-    let video = document.querySelector('.video-wrapper video');
-    document.getElementById('play-btn').addEventListener('click', () => {
-        if(video.paused){
-            video.play();
-        } else {
-            video.pause();
-        }
-    });
-</script>
 {% endblock %}
