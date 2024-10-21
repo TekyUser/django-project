@@ -1,3 +1,4 @@
+
 Project Documentation - Overview and Setup Guide
 Project Overview
 This project is a travel-based web application that displays featured places and galleries of popular destinations around the world. The app dynamically loads featured places and gallery items, which are stored in a JSON file, allowing easy management and updates of the content. The app is built using Django for the backend, with templated HTML for the frontend, styled using static assets (CSS, JavaScript, and images).
@@ -14,7 +15,7 @@ A virtual environment tool (e.g., venv)
 Git (for version control)
 Basic understanding of HTML/CSS for frontend adjustments
 2. Clone the Repository
-Start by cloning the repository from the version control system (e.g., GitHub):
+Start by cloning the repository from GitHub:
 
 bash
 Copy code
@@ -58,7 +59,7 @@ python manage.py runserver
 You can now view the project by going to http://localhost:8000 in your browser.
 
 Project Folder Structure
-bash
+plaintext
 Copy code
 /project_folder
     /app_name                # The main Django app
@@ -122,6 +123,3 @@ Virtual Environments: Keep your environment isolated to avoid dependency conflic
 Security: For production environments, make sure to configure security settings, such as setting DEBUG = False and using secure databases.
 Conclusion
 This project has been designed with scalability and ease of content management in mind. By moving the featured places and gallery data to a JSON file, you can quickly update the content without modifying the Django backend code. Follow the setup instructions carefully, and you will have the project running in no time. For future developers, this structure allows for easy extensibility, whether through adding new pages, connecting to databases, or improving the frontend design.
-
-If you have any questions or need further clarification, feel free to reach out!
-
