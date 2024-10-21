@@ -127,6 +127,19 @@ Travel Website - Toan's Website
                     </div>
                 </div>
             {% endfor %}
+            {% comment %} {% for place in featured_places %}
+                <div class="featured-item my-2 shadow">
+                    <img src="{{ place.image.url }}" alt="{{ place.name }}">
+                    <div class="featured-item-content">
+                        <span>
+                            <i class="fas fa-map-marker-alt"></i> {{ place.name }}
+                        </span>
+                        <div>
+                            <p class="text">{{ place.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %} {% endcomment %}
             {% comment %}  {% endcomment %}
         </div>
     </div>

@@ -17,6 +17,7 @@
         <link rel = "stylesheet" href = "{% static 'css/utility.css' %}">
         <link rel = "stylesheet" href = "{% static 'css/style.css' %}">
         <link rel = "stylesheet" href = "{% static 'css/responsive.css' %}">
+        <link rel="icon" href="{% static 'images/image.png' %}" type="image">
     </head>
     <body>
         <!-- navbar  -->
@@ -38,7 +39,7 @@
                             <a href = {% url "home" %} class = "nav-link">Home</a>
                         </li>
                         <li class = "nav-item">
-                            <a href = "gallery.html" class = "nav-link">Gallery</a>
+                            <a href = {% url "gallery" %} class = "nav-link">Gallery</a>
                         </li>
                         <li class = "nav-item">
                             <a href = "blog.html" class = "nav-link">Blog</a>
