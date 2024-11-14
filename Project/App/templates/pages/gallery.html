@@ -19,60 +19,14 @@ Travel Website - Toan's Website
 <div id = "gallery" class = "py-4">
     <div class = "container">
         <div class = "gallery-row">
+            {% for place_window in gallery_window %}
             <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-1.jpg"%} alt = "gallery img">
+                <img src ="{% static place_window.image %}" alt = "gallery img">
                 <span class = "zoom-icon">
                     <i class = "fas fa-search-plus"></i>
                 </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-2.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-3.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-4.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-5.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-6.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-7.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-8.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
-            <div class = "gallery-item shadow">
-                <img src ={% static "images/gallery-9.jpg"%} alt = "gallery img">
-                <span class = "zoom-icon">
-                    <i class = "fas fa-search-plus"></i>
-                </span>
-            </div>
+            </div>        
+            {% endfor %}
         </div>
     </div>
 </div>

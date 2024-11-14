@@ -25,8 +25,20 @@ def gallery_page(request):
     {"image": "images/popular-7.jpg", "name": "Havana, Cuba", "reviews": 400, "rating": 4.5, "des": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!"},
     {"image": "images/popular-8.jpg", "name": "Moskva, Russia", "reviews": 400, "rating": 4.5, "des": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, quia!"},
     ]
+    gallery_window = [
+    {"image": "images/gallery-1.jpg",},
+    {"image": "images/gallery-2.jpg",},
+    {"image": "images/gallery-3.jpg",},
+    {"image": "images/gallery-4.jpg",},
+    {"image": "images/gallery-5.jpg",},
+    {"image": "images/gallery-6.jpg",},
+    {"image": "images/gallery-7.jpg",},
+    {"image": "images/gallery-8.jpg",},
+    {"image": "images/gallery-9.jpg",},
+    ]
 
-    return render(request, 'pages/gallery.html', {"gallery_places": gallery_places})
+    # return render(request, 'pages/gallery.html', {"gallery_places": gallery_places}, {"gallery_window": gallery_window})
+    return render(request, 'pages/gallery.html', {"gallery_places": gallery_places,"gallery_window": gallery_window})
 
 def contact_page(request):
     return render(request, 'pages/contact.html')
